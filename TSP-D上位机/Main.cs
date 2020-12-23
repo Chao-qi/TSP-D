@@ -131,9 +131,32 @@ namespace TSP_D上位机
             }
         }
 
+        
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (button4.BackColor == Color.Transparent)
+            {
+                global.tcpPLC.SetM("64");
+                button4.BackColor = Color.SpringGreen;
+            }
+            else if (button4.BackColor == Color.SpringGreen)
+            {
+                global.tcpPLC.RstM("64");
+                button4.BackColor = Color.Transparent;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }
