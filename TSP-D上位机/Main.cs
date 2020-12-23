@@ -147,16 +147,29 @@ namespace TSP_D上位机
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
 
         }
 
-       
+        private void button3_MouseDown(object sender, MouseEventArgs e)
+        {
+            global.tcpPLC.SetM("92");
+        }
+
+        private void button3_MouseUp(object sender, MouseEventArgs e)
+        {
+            global.tcpPLC.RstM("92");
+        }
+
+        private void button4_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button4_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

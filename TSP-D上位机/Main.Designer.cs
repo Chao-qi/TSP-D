@@ -78,7 +78,7 @@
             this.退出toolStripMenuItem4});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(569, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(564, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -210,6 +210,8 @@
             this.button4.Text = "手动下降";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button4_MouseDown);
+            this.button4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button4_MouseUp);
             // 
             // button3
             // 
@@ -219,16 +221,18 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "手动上升";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
+            this.button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button3_MouseUp);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Location = new System.Drawing.Point(35, 97);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 36);
             this.button2.TabIndex = 1;
             this.button2.Text = "夹爪压下";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
@@ -316,6 +320,7 @@
             // 
             // timer2
             // 
+            this.timer2.Enabled = true;
             this.timer2.Interval = 200;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
@@ -324,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(569, 420);
+            this.ClientSize = new System.Drawing.Size(564, 415);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
