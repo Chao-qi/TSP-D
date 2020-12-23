@@ -135,41 +135,36 @@ namespace TSP_D上位机
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (button4.BackColor == Color.Transparent)
+            if (button2.BackColor == Color.Transparent)
             {
-                global.tcpPLC.SetM("64");
-                button4.BackColor = Color.SpringGreen;
+                global.tcpPLC.SetM("2");
+                button2.BackColor = Color.SpringGreen;
             }
-            else if (button4.BackColor == Color.SpringGreen)
+            else if (button2.BackColor == Color.SpringGreen)
             {
-                global.tcpPLC.RstM("64");
-                button4.BackColor = Color.Transparent;
+                global.tcpPLC.RstM("2");
+                button2.BackColor = Color.Transparent;
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_MouseDown(object sender, MouseEventArgs e)
         {
-            global.tcpPLC.SetM("92");
+            global.tcpPLC.SetM("3");
         }
 
         private void button3_MouseUp(object sender, MouseEventArgs e)
         {
-            global.tcpPLC.RstM("92");
+            global.tcpPLC.RstM("3");
         }
 
         private void button4_MouseDown(object sender, MouseEventArgs e)
         {
-
+            global.tcpPLC.SetM("4");
         }
 
         private void button4_MouseUp(object sender, MouseEventArgs e)
         {
-
+            global.tcpPLC.RstM("4");
         }
     }
 }
