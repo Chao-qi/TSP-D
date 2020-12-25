@@ -116,8 +116,9 @@
             // 
             // 退出toolStripMenuItem4
             // 
+            this.退出toolStripMenuItem4.Image = global::TSP_D上位机.Properties.Resources.退出;
             this.退出toolStripMenuItem4.Name = "退出toolStripMenuItem4";
-            this.退出toolStripMenuItem4.Size = new System.Drawing.Size(44, 21);
+            this.退出toolStripMenuItem4.Size = new System.Drawing.Size(60, 21);
             this.退出toolStripMenuItem4.Text = "退出";
             this.退出toolStripMenuItem4.Click += new System.EventHandler(this.退出toolStripMenuItem4_Click);
             // 
