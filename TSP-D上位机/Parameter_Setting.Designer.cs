@@ -81,8 +81,7 @@
             this.groupBox1.Size = new System.Drawing.Size(504, 251);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "参数设置";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Text = "参数设置";     
             // 
             // label1
             // 
@@ -92,8 +91,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "原点速度：";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "原点速度：";       
             // 
             // textBox1
             // 
@@ -138,7 +136,6 @@
             this.label3.Size = new System.Drawing.Size(120, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "手动上升速度：";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox4
             // 
@@ -147,7 +144,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(108, 26);
             this.textBox4.TabIndex = 7;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 
@@ -158,7 +154,6 @@
             this.label4.Size = new System.Drawing.Size(120, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "手动下降速度：";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox5
             // 
@@ -177,7 +172,6 @@
             this.label5.Size = new System.Drawing.Size(88, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "当前位置：";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox6
             // 
@@ -196,7 +190,6 @@
             this.label6.Size = new System.Drawing.Size(88, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "上料位置：";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBox7
             // 
@@ -215,7 +208,6 @@
             this.label7.Size = new System.Drawing.Size(96, 16);
             this.label7.TabIndex = 12;
             this.label7.Text = "测试位置1：";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textBox8
             // 

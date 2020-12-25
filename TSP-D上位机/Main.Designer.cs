@@ -30,16 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.登录toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.手动toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.参数设置toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.计数清零ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.退出toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -56,16 +49,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.登录toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.手动toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.参数设置toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.计数清零ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -81,46 +81,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(564, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 登录toolStripMenuItem1
-            // 
-            this.登录toolStripMenuItem1.Image = global::TSP_D上位机.Properties.Resources.登录;
-            this.登录toolStripMenuItem1.Name = "登录toolStripMenuItem1";
-            this.登录toolStripMenuItem1.Size = new System.Drawing.Size(60, 21);
-            this.登录toolStripMenuItem1.Text = "登录";
-            this.登录toolStripMenuItem1.Click += new System.EventHandler(this.登录toolStripMenuItem1_Click);
-            // 
-            // 手动toolStripMenuItem2
-            // 
-            this.手动toolStripMenuItem2.Image = global::TSP_D上位机.Properties.Resources.手动;
-            this.手动toolStripMenuItem2.Name = "手动toolStripMenuItem2";
-            this.手动toolStripMenuItem2.Size = new System.Drawing.Size(84, 21);
-            this.手动toolStripMenuItem2.Text = "手动运行";
-            this.手动toolStripMenuItem2.Click += new System.EventHandler(this.手动toolStripMenuItem2_Click);
-            // 
-            // 参数设置toolStripMenuItem3
-            // 
-            this.参数设置toolStripMenuItem3.Image = global::TSP_D上位机.Properties.Resources.参数设置;
-            this.参数设置toolStripMenuItem3.Name = "参数设置toolStripMenuItem3";
-            this.参数设置toolStripMenuItem3.Size = new System.Drawing.Size(84, 21);
-            this.参数设置toolStripMenuItem3.Text = "参数设置";
-            this.参数设置toolStripMenuItem3.Click += new System.EventHandler(this.参数设置toolStripMenuItem3_Click);
-            // 
-            // 计数清零ToolStripMenuItem
-            // 
-            this.计数清零ToolStripMenuItem.Image = global::TSP_D上位机.Properties.Resources.清零;
-            this.计数清零ToolStripMenuItem.Name = "计数清零ToolStripMenuItem";
-            this.计数清零ToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
-            this.计数清零ToolStripMenuItem.Text = "计数清零";
-            this.计数清零ToolStripMenuItem.Click += new System.EventHandler(this.计数清零ToolStripMenuItem_Click);
-            // 
-            // 退出toolStripMenuItem4
-            // 
-            this.退出toolStripMenuItem4.Image = global::TSP_D上位机.Properties.Resources.退出;
-            this.退出toolStripMenuItem4.Name = "退出toolStripMenuItem4";
-            this.退出toolStripMenuItem4.Size = new System.Drawing.Size(60, 21);
-            this.退出toolStripMenuItem4.Text = "退出";
-            this.退出toolStripMenuItem4.Click += new System.EventHandler(this.退出toolStripMenuItem4_Click);
             // 
             // tabControl1
             // 
@@ -144,14 +104,6 @@
             this.tabPage1.Text = "产品图";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 249);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.pictureBox2);
@@ -162,14 +114,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "设备状态";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(2, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(297, 246);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // groupBox1
             // 
@@ -204,23 +148,25 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.Location = new System.Drawing.Point(35, 212);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 36);
             this.button4.TabIndex = 3;
             this.button4.Text = "手动下降";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button4_MouseDown);
             this.button4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button4_MouseUp);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.Location = new System.Drawing.Point(35, 154);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 36);
             this.button3.TabIndex = 2;
             this.button3.Text = "手动上升";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
             this.button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button3_MouseUp);
             // 
@@ -237,12 +183,13 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(35, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 36);
             this.button1.TabIndex = 0;
             this.button1.Text = "夹爪抬起";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox4
@@ -324,6 +271,62 @@
             this.timer2.Interval = 200;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(297, 249);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(2, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(297, 246);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // 登录toolStripMenuItem1
+            // 
+            this.登录toolStripMenuItem1.Image = global::TSP_D上位机.Properties.Resources.登录;
+            this.登录toolStripMenuItem1.Name = "登录toolStripMenuItem1";
+            this.登录toolStripMenuItem1.Size = new System.Drawing.Size(60, 21);
+            this.登录toolStripMenuItem1.Text = "登录";
+            this.登录toolStripMenuItem1.Click += new System.EventHandler(this.登录toolStripMenuItem1_Click);
+            // 
+            // 手动toolStripMenuItem2
+            // 
+            this.手动toolStripMenuItem2.Image = global::TSP_D上位机.Properties.Resources.手动;
+            this.手动toolStripMenuItem2.Name = "手动toolStripMenuItem2";
+            this.手动toolStripMenuItem2.Size = new System.Drawing.Size(84, 21);
+            this.手动toolStripMenuItem2.Text = "手动运行";
+            this.手动toolStripMenuItem2.Click += new System.EventHandler(this.手动toolStripMenuItem2_Click);
+            // 
+            // 参数设置toolStripMenuItem3
+            // 
+            this.参数设置toolStripMenuItem3.Image = global::TSP_D上位机.Properties.Resources.参数设置;
+            this.参数设置toolStripMenuItem3.Name = "参数设置toolStripMenuItem3";
+            this.参数设置toolStripMenuItem3.Size = new System.Drawing.Size(84, 21);
+            this.参数设置toolStripMenuItem3.Text = "参数设置";
+            this.参数设置toolStripMenuItem3.Click += new System.EventHandler(this.参数设置toolStripMenuItem3_Click);
+            // 
+            // 计数清零ToolStripMenuItem
+            // 
+            this.计数清零ToolStripMenuItem.Image = global::TSP_D上位机.Properties.Resources.清零;
+            this.计数清零ToolStripMenuItem.Name = "计数清零ToolStripMenuItem";
+            this.计数清零ToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
+            this.计数清零ToolStripMenuItem.Text = "计数清零";
+            this.计数清零ToolStripMenuItem.Click += new System.EventHandler(this.计数清零ToolStripMenuItem_Click);
+            // 
+            // 退出toolStripMenuItem4
+            // 
+            this.退出toolStripMenuItem4.Image = global::TSP_D上位机.Properties.Resources.退出;
+            this.退出toolStripMenuItem4.Name = "退出toolStripMenuItem4";
+            this.退出toolStripMenuItem4.Size = new System.Drawing.Size(60, 21);
+            this.退出toolStripMenuItem4.Text = "退出";
+            this.退出toolStripMenuItem4.Click += new System.EventHandler(this.退出toolStripMenuItem4_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -342,14 +345,14 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
