@@ -30,7 +30,7 @@ namespace TSP_D上位机
         {
             global.tcpPLC = new ModbusTCP();
 
-            if (!global.tcpPLC.tcpConnect("192.168.1.33"))
+            if (!global.tcpPLC.tcpConnect("192.168.1.1"))
             {
                 MessageBox.Show("PLC连接错误!");
             }
