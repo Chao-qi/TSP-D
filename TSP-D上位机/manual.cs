@@ -26,34 +26,28 @@ namespace TSP_D上位机
         {
 
             serialPort.PortName = portname;
-            serialPort.BaudRate = 38400;
+            serialPort.BaudRate = 9600;
+            serialPort.DataBits = 8;
+            serialPort.StopBits = StopBits.One;
+            serialPort.Parity = Parity.None;
             serialPort.Open();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            seriop("COM2");
+        {     
+            seriop("COM3");
             Thread.Sleep(1000);
-            string send = "67 65 74 2E 76 65 72";
-            byte[] sendcom = StrtoByte(send);
-            serialPort.Write(sendcom, 0, sendcom.Length);
-            Thread.Sleep(500);
-            textBox1.Text = serialPort.ReadLine();
+            string send = "get.ver";
+            serialPort.WriteLine(send);
         }
-        public static byte[] StrtoByte(string data)
+        private void dataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-
-            string[] datas = data.Split(' ');
-            List<byte> bytedata = new List<byte>();
-
-            foreach (string str in datas)
+            if (serialPort.IsOpen)
             {
-                bytedata.Add(byte.Parse(str, System.Globalization.NumberStyles.AllowHexSpecifier));
+                String input = serialPort.ReadLine();
+                textBox1.Text += input + "\r\n";
             }
-            byte[] crcbuf = bytedata.ToArray();
-
-            return crcbuf;
         }
     }
 }
