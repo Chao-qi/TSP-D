@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -48,6 +50,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button4);
@@ -57,16 +61,36 @@
             this.groupBox1.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 139);
+            this.groupBox1.Size = new System.Drawing.Size(507, 130);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "串口控制";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownHeight = 160;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.IntegralHeight = false;
+            this.comboBox1.Location = new System.Drawing.Point(8, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(87, 22);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1, 75);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(94, 33);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "打开串口";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("楷体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(7, 84);
+            this.label1.Location = new System.Drawing.Point(99, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 19);
             this.label1.TabIndex = 5;
@@ -74,15 +98,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 79);
+            this.textBox1.Location = new System.Drawing.Point(214, 79);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(324, 29);
+            this.textBox1.Size = new System.Drawing.Size(279, 29);
             this.textBox1.TabIndex = 4;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(239, 20);
+            this.button4.Location = new System.Drawing.Point(303, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 36);
             this.button4.TabIndex = 3;
@@ -91,7 +115,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(354, 20);
+            this.button3.Location = new System.Drawing.Point(403, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 36);
             this.button3.TabIndex = 2;
@@ -100,7 +124,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(124, 20);
+            this.button2.Location = new System.Drawing.Point(203, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 36);
             this.button2.TabIndex = 1;
@@ -109,7 +133,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(9, 20);
+            this.button1.Location = new System.Drawing.Point(103, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 36);
             this.button1.TabIndex = 0;
@@ -192,11 +216,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(488, 329);
+            this.ClientSize = new System.Drawing.Size(531, 361);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Manual";
             this.Text = "manual";
+            this.Load += new System.EventHandler(this.Manual_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -221,5 +246,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button9;
     }
 }
