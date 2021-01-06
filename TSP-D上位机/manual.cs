@@ -116,9 +116,8 @@ namespace TSP_D上位机
             if (serialPort.IsOpen)
             {
                
-                DateTime dateTimeNow = DateTime.Now;
-                
-              //  textBox1.Text += string.Format("{0}\r", dateTimeNow);
+                DateTime dateTimeNow = DateTime.Now;               
+                textBox1.Text += string.Format("{0}\r", dateTimeNow);
                
                 textBox1.ForeColor = Color.Red;    //改变字体的颜色             
                 String input = serialPort.ReadLine();
@@ -137,6 +136,7 @@ namespace TSP_D上位机
         private void button1_Click(object sender, EventArgs e)
         {
             serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
+            textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
@@ -150,6 +150,7 @@ namespace TSP_D上位机
         private void button2_Click(object sender, EventArgs e)
         {
             serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
+            textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
@@ -163,37 +164,39 @@ namespace TSP_D上位机
         private void button4_Click(object sender, EventArgs e)
         {
             serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
+            textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
                 return;
             }
-            if (button2.BackColor == Color.Transparent)
-            {
-                String strSend = " |00FFBW0M5073011";//发送框数据
-                serialPort.WriteLine(strSend);//发送一行数据
-                button2.BackColor = Color.SpringGreen;
-                button2.Text = "关闭夹爪";
-            }
-            else if (button2.BackColor == Color.SpringGreen)
-            {
-                String strSend = " |00FFBW0M5074011";//发送框数据
-                serialPort.WriteLine(strSend);//发送一行数据
-                button2.BackColor = Color.Transparent;
-                button2.Text = "打开夹爪";
-            }        
+                if (button4.BackColor == Color.Transparent)
+                {
+                    String strSend = " |00FFBW0M5073011";//发送框数据
+                    serialPort.WriteLine(strSend);//发送一行数据
+                    button4.BackColor = Color.SpringGreen;
+                    button4.Text = "关闭夹爪";
+                }
+                else if (button4.BackColor == Color.SpringGreen)
+                {
+                    String strSend = " |00FFBW0M5074011";//发送框数据
+                    serialPort.WriteLine(strSend);//发送一行数据
+                    button4.BackColor = Color.Transparent;
+                    button4.Text = "打开夹爪";
+                }         
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
+            textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
                 return;
             }
 
-            String strSend = " |00FFBR0M080001";//发送框数据
+            String strSend = "|00FFBR0M080001";//发送框数据
             serialPort.WriteLine(strSend);//发送一行数据
         }
     }
