@@ -15,6 +15,74 @@ namespace TSP_D上位机
         public Parameter_Setting()
         {
             InitializeComponent();
-        }      
+        }
+
+        private void Parameter_Setting_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox1.Text = global.tcpPLC.readD("256");
+                textBox2.Text = global.tcpPLC.readD("260");
+                textBox3.Text = global.tcpPLC.readD("210");
+                textBox4.Text = global.tcpPLC.readD("212");
+                textBox8.Text = global.tcpPLC.readD("100");
+                textBox7.Text = global.tcpPLC.readD("252");
+                textBox6.Text = global.tcpPLC.readD("250");
+                textBox5.Text = global.tcpPLC.readD("264");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("plc链接错误");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.DialogResult dr;
+            dr = MessageBox.Show(this, "要保存当前参数吗？", "是否保存？", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (dr)
+            {
+                case System.Windows.Forms.DialogResult.Yes://保存修改    
+                    try
+                    {
+                        global.tcpPLC.writeD("256", textBox1.Text);
+                        global.tcpPLC.writeD("260", textBox2.Text);
+                        global.tcpPLC.writeD("210", textBox3.Text);
+                        global.tcpPLC.writeD("212", textBox4.Text);
+                        global.tcpPLC.writeD("100", textBox8.Text);
+                        global.tcpPLC.writeD("252", textBox7.Text);
+                        global.tcpPLC.writeD("250", textBox6.Text);
+                        global.tcpPLC.writeD("264", textBox5.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("plc链接错误");
+                    }
+                    break;
+                case System.Windows.Forms.DialogResult.No:
+                    break;
+            }
+        }     
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            global.tcpPLC.SetM("8");
+        }
+
+        private void button1_MouseUp(object sender, MouseEventArgs e)
+        {
+            global.tcpPLC.RstM("8");
+        }
+      
+
+        private void button2_MouseDown(object sender, MouseEventArgs e)
+        {
+            global.tcpPLC.SetM("9");
+        }
+
+        private void button2_MouseUp(object sender, MouseEventArgs e)
+        {
+            global.tcpPLC.RstM("9");
+        }
     }
 }
