@@ -118,15 +118,15 @@ namespace TSP_D上位机
                
                 DateTime dateTimeNow = DateTime.Now;
                 
-                textBox1.Text += string.Format("{0}\r\n", dateTimeNow);
+                textBox1.Text += string.Format("{0}\r", dateTimeNow);
                
                 textBox1.ForeColor = Color.Red;    //改变字体的颜色             
                 String input = serialPort.ReadLine();
                 textBox1.Text += input + "\r\n";   
                                                                                           
-                textBox1.SelectionStart = textBox1.Text.Length;
-                textBox1.ScrollToCaret();//滚动到光标处
-                serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
+              //  textBox1.SelectionStart = textBox1.Text.Length;
+               // textBox1.ScrollToCaret();//滚动到光标处
+               // serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
             } 
             else
             {
