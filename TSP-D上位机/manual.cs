@@ -43,6 +43,7 @@ namespace TSP_D上位机
             }
             //设置默认串口选项
             comboBox1.SelectedIndex = 0;
+            AsciiradioButton1.Checked = true;
 
         }
 
@@ -119,9 +120,29 @@ namespace TSP_D上位机
                 DateTime dateTimeNow = DateTime.Now;               
                 textBox1.Text += string.Format("{0}\r", dateTimeNow);
                
-                textBox1.ForeColor = Color.Red;    //改变字体的颜色             
-                String input = serialPort.ReadLine();
-                textBox1.Text += input + "\r\n";   
+                textBox1.ForeColor = Color.Red;    //改变字体的颜色    
+                if (AsciiradioButton1.Checked == true)
+                {
+                    String input = serialPort.ReadLine();
+                    textBox1.Text += input + "\r\n";
+                }
+                else
+                {
+                    string input = serialPort.ReadLine();
+                    char[] values = input.ToCharArray();
+                    foreach (char letter in values)
+                    {
+                        // Get the integral value of the character.
+                        int value = Convert.ToInt32(letter);
+                        // Convert the decimal value to a hexadecimal value in string form.
+                        string hexOutput = String.Format("{0:X}", value);
+                        textBox1.AppendText(hexOutput + " ");
+                        textBox1.SelectionStart = textBox1.Text.Length;
+                        textBox1.ScrollToCaret();//滚动到光标处
+                        textBox1.Text += hexOutput + " ";
+
+                    }
+                }
                                                                                           
               //  textBox1.SelectionStart = textBox1.Text.Length;
                // textBox1.ScrollToCaret();//滚动到光标处

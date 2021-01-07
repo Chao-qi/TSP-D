@@ -44,12 +44,17 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.AsciiradioButton1 = new System.Windows.Forms.RadioButton();
+            this.HexradioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.label1);
@@ -98,10 +103,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(214, 79);
+            this.textBox1.Location = new System.Drawing.Point(214, 75);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 29);
+            this.textBox1.Size = new System.Drawing.Size(154, 33);
             this.textBox1.TabIndex = 4;
             // 
             // button4
@@ -215,6 +220,37 @@
             this.button5.Text = "状态查询";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.HexradioButton2);
+            this.panel1.Controls.Add(this.AsciiradioButton1);
+            this.panel1.Location = new System.Drawing.Point(374, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(122, 31);
+            this.panel1.TabIndex = 9;
+            // 
+            // AsciiradioButton1
+            // 
+            this.AsciiradioButton1.AutoSize = true;
+            this.AsciiradioButton1.Location = new System.Drawing.Point(3, 6);
+            this.AsciiradioButton1.Name = "AsciiradioButton1";
+            this.AsciiradioButton1.Size = new System.Drawing.Size(60, 18);
+            this.AsciiradioButton1.TabIndex = 0;
+            this.AsciiradioButton1.TabStop = true;
+            this.AsciiradioButton1.Text = "ASCII";
+            this.AsciiradioButton1.UseVisualStyleBackColor = true;
+            // 
+            // HexradioButton2
+            // 
+            this.HexradioButton2.AutoSize = true;
+            this.HexradioButton2.Location = new System.Drawing.Point(70, 6);
+            this.HexradioButton2.Name = "HexradioButton2";
+            this.HexradioButton2.Size = new System.Drawing.Size(46, 18);
+            this.HexradioButton2.TabIndex = 1;
+            this.HexradioButton2.TabStop = true;
+            this.HexradioButton2.Text = "Hex";
+            this.HexradioButton2.UseVisualStyleBackColor = true;
+            // 
             // Manual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -230,6 +266,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +290,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton HexradioButton2;
+        private System.Windows.Forms.RadioButton AsciiradioButton1;
     }
 }
