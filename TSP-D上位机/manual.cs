@@ -118,7 +118,7 @@ namespace TSP_D上位机
             {
                
                 DateTime dateTimeNow = DateTime.Now;               
-                textBox1.Text += string.Format("{0}\r", dateTimeNow);
+                //textBox1.Text += string.Format("{0}\r", dateTimeNow);
                
                 textBox1.ForeColor = Color.Red;    //改变字体的颜色    
                 if (AsciiradioButton1.Checked == true)
@@ -220,6 +220,7 @@ namespace TSP_D上位机
             String strSend = "|00FFBR0M080001";//发送框数据
             serialPort.WriteLine(strSend);//发送一行数据
         }
+     
     }
 
 }
