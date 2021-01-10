@@ -34,6 +34,9 @@ namespace TSP_D上位机
             {
                 MessageBox.Show("PLC连接错误!");
             }
+            textBox1.Text = global.tcpPLC.readD("100");
+            textBox2.Text = global.tcpPLC.readD("102");
+            textBox2.Text = global.tcpPLC.readD("103");
         }
 
         private void 登录toolStripMenuItem1_Click(object sender, EventArgs e)

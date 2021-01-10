@@ -62,6 +62,7 @@ namespace TSP_D上位机
             serialPort.ReadTimeout = 1000;
 
             serialPort.Close();
+           
 
         }
 
@@ -136,9 +137,9 @@ namespace TSP_D上位机
                         int value = Convert.ToInt32(letter);
                         // Convert the decimal value to a hexadecimal value in string form.
                         string hexOutput = String.Format("{0:X}", value);
-                        textBox1.AppendText(hexOutput + " ");
-                        textBox1.SelectionStart = textBox1.Text.Length;
-                        textBox1.ScrollToCaret();//滚动到光标处
+                        //textBox1.AppendText(hexOutput + " ");
+                        //textBox1.SelectionStart = textBox1.Text.Length;
+                       // textBox1.ScrollToCaret();//滚动到光标处
                         textBox1.Text += hexOutput + " ";
 
                     }
@@ -156,7 +157,7 @@ namespace TSP_D上位机
 
         private void button1_Click(object sender, EventArgs e)
         {
-            serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
+           // serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
             textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
