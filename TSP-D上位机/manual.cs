@@ -62,7 +62,6 @@ namespace TSP_D上位机
             serialPort.ReadTimeout = 1000;
 
             serialPort.Close();
-           
 
         }
 
@@ -84,7 +83,7 @@ namespace TSP_D上位机
                  
 
                     serialPort.PortName = strSerialName;//串口号
-                    serialPort.BaudRate =9600;//波特率
+                    serialPort.BaudRate =38400;//波特率
                     serialPort.DataBits =8;//数据位
                     serialPort.StopBits = StopBits.One;
                     serialPort.Parity = Parity.None;
@@ -120,35 +119,64 @@ namespace TSP_D上位机
                
                 DateTime dateTimeNow = DateTime.Now;               
                 //textBox1.Text += string.Format("{0}\r", dateTimeNow);
-               
                 textBox1.ForeColor = Color.Red;    //改变字体的颜色    
                 if (AsciiradioButton1.Checked == true)
                 {
-                    String input = serialPort.ReadLine();
-                    textBox1.Text += input + "\r\n";
+                    Byte[] receivedData = new Byte[serialPort.BytesToRead];        //创建接收字节数组
+                    serialPort.Read(receivedData, 0, receivedData.Length);
+                    serialPort.DiscardInBuffer();
+                    string strRcv = null;
+                    for (int i = 0; i < receivedData.Length; i++)
+                    {
+                        strRcv += receivedData[i].ToString("X2");
+                       // strRcv += " ";
+                       // System.Threading.Thread.Sleep(5);
+                    }
+                    byte[] buff = new byte[strRcv.Length / 2];
+                    int index = 0;
+                    for (int i = 0; i < strRcv.Length; i += 2)
+                    {
+                        buff[index] = Convert.ToByte(strRcv.Substring(i, 2), 16);
+                        ++index;
+                    }
+                    string result = Encoding.Default.GetString(buff);
+                    textBox1.Text = result + "\r\n";
+                    // String input = serialPort.ReadLine();
+                    //textBox1.Text += input + "\r\n";
                 }
                 else
                 {
-                    string input = serialPort.ReadLine();
-                    char[] values = input.ToCharArray();
-                    foreach (char letter in values)
+                    Byte[] receivedData = new Byte[serialPort.BytesToRead];        //创建接收字节数组
+                    serialPort.Read(receivedData, 0, receivedData.Length);
+                    serialPort.DiscardInBuffer();
+                    string strRcv = null;
+                    for (int i = 0; i < receivedData.Length; i++)
                     {
-                        // Get the integral value of the character.
-                        int value = Convert.ToInt32(letter);
-                        // Convert the decimal value to a hexadecimal value in string form.
-                        string hexOutput = String.Format("{0:X}", value);
-                        //textBox1.AppendText(hexOutput + " ");
-                        //textBox1.SelectionStart = textBox1.Text.Length;
-                       // textBox1.ScrollToCaret();//滚动到光标处
-                        textBox1.Text += hexOutput + " ";
-
+                        strRcv += receivedData[i].ToString("X2");
+                        strRcv += " ";
+                        System.Threading.Thread.Sleep(5);
                     }
+                    textBox1.Text += strRcv + "\r\n";
+
+                    //  string input = serialPort.ReadLine();
+                    // char[] values = input.ToCharArray();
+                    // foreach (char letter in values)
+                    // {
+                    ///  // Get the integral value of the character.
+                        //  int value = Convert.ToInt32(letter);
+                        //   // Convert the decimal value to a hexadecimal value in string form.
+                        //   string hexOutput = String.Format("{0:X}", value);
+                        //  textBox1.AppendText(hexOutput + " ");
+                        //  textBox1.SelectionStart = textBox1.Text.Length;
+                        //   textBox1.ScrollToCaret();//滚动到光标处
+                        //   textBox1.Text += hexOutput + " ";
+
+                }
                 }
                                                                                           
               //  textBox1.SelectionStart = textBox1.Text.Length;
                // textBox1.ScrollToCaret();//滚动到光标处
-               // serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
-            } 
+               // serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer           
             else
             {
                 MessageBox.Show("请打开某个串口", "错误提示");
@@ -157,22 +185,22 @@ namespace TSP_D上位机
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
-            textBox1.Text = "";
+            serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
+           // textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
                 return;
             }
 
-            String strSend = "get.ver";//发送框数据
+            String strSend = "|00FFWR0D018101";//发送框数据
             serialPort.WriteLine(strSend);//发送一行数据 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
-            textBox1.Text = "";
+          //  textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
@@ -186,7 +214,7 @@ namespace TSP_D上位机
         private void button4_Click(object sender, EventArgs e)
         {
             serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
-            textBox1.Text = "";
+           // textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
@@ -194,14 +222,14 @@ namespace TSP_D上位机
             }
                 if (button4.BackColor == Color.Transparent)
                 {
-                    String strSend = " |00FFBW0M5073011";//发送框数据
+                    String strSend = "|00FFBW0M5073011";//发送框数据
                     serialPort.WriteLine(strSend);//发送一行数据
                     button4.BackColor = Color.SpringGreen;
                     button4.Text = "关闭夹爪";
                 }
                 else if (button4.BackColor == Color.SpringGreen)
                 {
-                    String strSend = " |00FFBW0M5074011";//发送框数据
+                    String strSend = "|00FFBW0M5074011";//发送框数据
                     serialPort.WriteLine(strSend);//发送一行数据
                     button4.BackColor = Color.Transparent;
                     button4.Text = "打开夹爪";
@@ -211,7 +239,7 @@ namespace TSP_D上位机
         private void button3_Click(object sender, EventArgs e)
         {
             serialPort.DiscardInBuffer(); //清空SerialPort控件的Buffer 
-            textBox1.Text = "";
+          //  textBox1.Text = "";
             if (!serialPort.IsOpen)
             {
                 MessageBox.Show("请先打开串口", "Error");
